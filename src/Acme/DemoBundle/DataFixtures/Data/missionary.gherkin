@@ -1,0 +1,4 @@
+| username |      email       | enabled | plainPassword | expired | locked |     roles    |
+| monax    | example1@mail.ru |   true  | 123456        | false   | false  | [ROLE_ADMIN] |
+| user2    | example2@mail.ru |   true  | 123456        | false   | false  | [ROLE_ADMIN] |
+| user3    | example3@mail.ru |   true  | 123456        | false   | false  | [ROLE_ADMIN] |

@@ -1,0 +1,42 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contact
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="sf2_contact_group")
+ */
+class ContactGroup
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\ManyToMany(
+     *      targetEntity="Contact",
+     *      mappedBy="contactGroups",
+     *      cascade={"persist"}
+     * )
+     */
+    private $contacts;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Missionary", inversedBy="contactGroups")
+     */
+    private $missionary;
+}
